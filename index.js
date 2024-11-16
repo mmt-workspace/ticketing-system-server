@@ -37,7 +37,7 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, {  
 
     cors: {
-    origin: ["https://kasuat20.mmt-ng.com","http://127.0.0.1:8700"],
+    origin: ["https://kasuat20.mmt-ng.com","http://127.0.0.1:8800"],
     methods:['GET','POST']
   } }
   )

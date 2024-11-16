@@ -93,14 +93,4 @@ CREATE TABLE ticket_table(
 
 
 
-/* Limitation  */
-CREATE TABLE Limitation_(
-   
-   limit_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-   amount int DEFAULT 0,
-   user_token VARCHAR(200),
-   ID VARCHAR(200),
-   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-
 
