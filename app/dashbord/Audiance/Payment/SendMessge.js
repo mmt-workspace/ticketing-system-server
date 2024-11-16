@@ -2,16 +2,21 @@ var request = require('request')
 
 
 
-SendMessge = (phone)=>{
+SendMessge = (phone,ID)=>{
 
  
-   let mobile = `234${phone}`
- // console.log(mobile)
+      let mobile 
+      if(phone.startsWith("0")){
+
+           mobile = `234${phone.slice(1)}`
+
+      }
+    
 
 var data = {
   "to": mobile,
   "from":"MastrmndTch",
-  "sms":`testing testing this is your Ticket ID: 123456 , Additionally, we can use your registered contact number to verify your entry at the gate on the day of the event.`,
+  "sms":` KASU@20 ANNIVERSARY ; Ticket ID: ${ID} ; Download your ticket using Ticket ID or your registered contact number in the website. Event Date: 29-November-2024`,
   "type":"plain",
   "api_key":"TLIBiuFyUgDTqfTXSryJLDqLnBlYPsyiMdZDTGPPPhBnVebeOBRPDqRtcmIGTt",
   "channel":"generic",

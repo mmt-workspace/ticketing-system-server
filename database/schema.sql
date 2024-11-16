@@ -85,12 +85,9 @@ CREATE TABLE log_tbl(
 
 
 
-CREATE TABLE ticket_table(
-
-    ticket_table_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-     
-);
-
-
-
-
+// count visitors
+ CREATE TABLE IF NOT EXISTS visitors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ip_address VARCHAR(45),
+    visit_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );

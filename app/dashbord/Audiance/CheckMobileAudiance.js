@@ -12,7 +12,8 @@ CheckMobileAudiance = (req,res,next) =>{
 
 
     const {mobileNumber} = req.body
-
+  
+ 
 
      if(validetor.isEmpty(mobileNumber.toString())) return res.sendStatus(422)
 
@@ -54,6 +55,9 @@ CheckMobileBeforePay = (req,res,next) =>{
     const {mobileNumber} = req.body
 
     if(validetor.isEmpty(mobileNumber.toString())) return res.sendStatus(422)
+
+
+
 
     const sql = "SELECT mobile FROM audiance WHERE mobile = ?;"
 

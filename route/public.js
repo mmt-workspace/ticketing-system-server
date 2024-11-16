@@ -6,6 +6,7 @@ const Add_Audiance = require("../app/dashbord/Audiance/Add_Audiance")
 const {CheckMobileAudiance,CheckMobileBeforePay} = require("../app/dashbord/Audiance/CheckMobileAudiance")
 const GetPaidAudiance = require("../app/dashbord/Audiance/GetPaidAudiance")
 const DownloadTicket = require("../app/dashbord/Audiance/downloadticket/DownloadTicket")
+const {CountVisitor} = require("./countvisitor")
 //const Signup = require("../app2/applicants/SignUp/Signup")
 /* const CheckEmailApplicant = require("../app2/applicants/SignUp/CheckEmailApplicant")
 const CheckMobileApplicant = require("../app2/applicants/SignUp/CheckMobileApplicant")
@@ -58,6 +59,7 @@ router.get("/get_applicant/:format",GetPaidAudiance)
 
 
 router.get('/download-ticket/:token',DownloadTicket);
+router.post("/log-visit",CountVisitor)
 
 
 module.exports = router;

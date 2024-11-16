@@ -13,7 +13,7 @@ Update_audiance_statll = (reference_id,user_token,a_id,ownertype,mobileNumber,ti
 
         if(err) return console.log(err)
 
-       //   SendMessge(mobileNumber)
+           SendMessge(mobileNumber,a_id)
        //   Update_reduce_sit(ticket_card_token)
 
        console.log("Paid and Updated")
@@ -78,7 +78,7 @@ const GetPaidList = (reference_id,transaction,status,user_token,a_id,mobileNumbe
     path: `/transaction/verify/${reference_id}`, // Remove ':' before the transaction ID
     method: 'GET',
     headers: {
-      Authorization: `Bearer sk_test_8002a75f23dfd6fbc2e7b173b9b87424cf99655a`, // Use an environment variable for the key
+      Authorization: `Bearer sk_live_e46d74ba63e120a9116ad5905c6112a572a68182`, // Use an environment variable for the key
     },
   };
 
