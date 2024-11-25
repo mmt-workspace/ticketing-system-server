@@ -1,5 +1,5 @@
 const db = require("../database/db")
-
+const validator = require("validator")
 
 
 
@@ -10,14 +10,20 @@ CountVisitor = (req,res)=>{
 
 
     
-    const ip = req.clientIp;
+    const ip = req.clientIp
+
+     if(validator.isEmpty(ip)){
+
+         res.Sendstatus(422)
+
+     }
 
     db.query("INSERT INTO visitors (ip_address) VALUES (?)", [ip], (err) => {
       if (err) {
         console.error("Error logging visit:", err);
         return res.status(500).send("Error logging visit");
       }
-      res.status(200)
+      res.Sendstatus(200)
      
     });
 
