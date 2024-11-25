@@ -14,8 +14,8 @@ CountVisitor = (req,res)=>{
 
      if(validator.isEmpty(ip)){
 
-         res.Sendstatus(422)
-
+         res.sendStatus(422)
+          return
      }
 
     db.query("INSERT INTO visitors (ip_address) VALUES (?)", [ip], (err) => {
@@ -23,7 +23,7 @@ CountVisitor = (req,res)=>{
         console.error("Error logging visit:", err);
         return res.status(500).send("Error logging visit");
       }
-      res.Sendstatus(200)
+      res.sendStatus(200)
      
     });
 

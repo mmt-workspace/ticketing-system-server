@@ -15,6 +15,8 @@ const RemoveAttendee = require("../app/dashbord/Audiance/RemoveAttendee")
 
 
 
+
+
 // Rigister admin users and admin
 router.post("/register_administration",CheckEmail,CheckMobile,RegisterAdministration)
 // RemoveAdminUser
