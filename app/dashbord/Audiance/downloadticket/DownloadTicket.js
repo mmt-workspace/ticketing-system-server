@@ -61,7 +61,7 @@ DownloadTicket = (req, res) => {
     // Event Details Section
     doc.moveDown(1);
     doc.fontSize(14).fillColor('#333333').text('Event Details:', { underline: true });
-    doc.moveDown(0.5).fontSize(12).text('Date: Friday, 29/November/2024');
+    doc.moveDown(0.5).fontSize(12).text('Date: Saturday, 14/December/2024');
     doc.text(isStall ? 'Time: 9 AM' : 'Time: 5 PM');
     doc.text("Location: UMARU MUSA YAR'ADUA Event Hall");
 
