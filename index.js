@@ -31,10 +31,10 @@ app.use(express.json())
 
 app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.use(bodyParser.json({limit: '10mb'}));
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
   req.clientIp = req.headers["x-forwarded-for"] || req.socket.remoteAddress || null;
   next();
-});
+}); */
 const httpServer = createServer(app);
 
 const io = new Server(httpServer, {  

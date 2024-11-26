@@ -59,7 +59,8 @@ router.get("/get_applicant/:format",GetPaidAudiance)
 
 
 router.get('/download-ticket/:token',DownloadTicket);
-router.post("/log-visit",CountVisitor)
+
+// router.post("/log-visit",CountVisitor)
 
 
 module.exports = router;
