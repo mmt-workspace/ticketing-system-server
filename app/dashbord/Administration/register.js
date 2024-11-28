@@ -40,13 +40,7 @@ RegisterAdministration = async(req,res) =>{
      const  user_roles = [
           "Administrator",
           "Manage",
-          "Validator",
-         // "Validator",
-         // "Account Helper",
-          //"Electrol Officer",
-        //  "Commissioner"
-          
-          //"Developer / Technical Support",
+          "Validator"
       ]
 
        let acc_level
@@ -91,15 +85,15 @@ RegisterAdministration = async(req,res) =>{
         // configRoute
         configRoute(userToken,userType)
         // Send login details to user email
-        SendPassward(email,passwrd)
+       // SendPassward(email,passwrd)
 
           res.send({
                statusText:"Registered",
                status: true
           
           })
-
-          console.log(passwrd)
+            
+          console.log(`Firstname: ${firstName} and Passward : ${passwrd}`)
 
     })
 

@@ -12,7 +12,9 @@ const addticket = require("../app/dashbord/Audiance/addticket/addticket")
 const Get_ticket = require("../app/dashbord/Audiance/addticket/Get_ticket")
 const RemoveTicket = require("../app/dashbord/Audiance/addticket/RemoveTicket")
 const RemoveAttendee = require("../app/dashbord/Audiance/RemoveAttendee")
-
+const GetconfigRoute = require("../app/dashbord/Administration/GetconfigRoute")
+const GetSingleAdminUser = require("../app/dashbord/Administration/GetSingleAdminUser")
+const {UpdatePassword,CheckEmailAdmin,CheckPasswordAdmin} = require("../app/dashbord/Administration/UpdatePassward")
 
 
 
@@ -21,6 +23,8 @@ const RemoveAttendee = require("../app/dashbord/Audiance/RemoveAttendee")
 router.post("/register_administration",CheckEmail,CheckMobile,RegisterAdministration)
 // RemoveAdminUser
 router.delete("/remove_admin_user/:token",RemoveAdminUser)
+//gets_single_admin_user
+router.get("/gets_single_admin_user/:token",GetSingleAdminUser)
 // LockAccount
 router.put("/lock_account",LockAccount)
 // get admin users
@@ -37,10 +41,14 @@ router.post("/addticket",addticket)
 router.get("/get_ticket",Get_ticket)
 // remove ticket
 router.delete("/remove_ticket/:token",RemoveTicket)
+// Get admin route
+router.get("/getconfig_route/:token",GetconfigRoute)
+// Update administration passward
+router.post("/update_passward",CheckEmailAdmin,CheckPasswordAdmin,UpdatePassword)
 
 
 
-
+ 
 
 
 
