@@ -65,7 +65,8 @@ RegisterAdministration = async(req,res) =>{
              return
         }
 
-        const  passwrd = RanDomID(32996582).toString()
+      //  const  passwrd = RanDomID(32996582).toString()
+        const  passwrd = 12345
         const saltRound = 10
         let hashPasswrd = await bcrypt.hash(passwrd,saltRound)
 

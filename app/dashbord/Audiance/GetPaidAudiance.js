@@ -17,8 +17,6 @@ GetPaidAudiance = (req,res)=>{
     if(validator.isEmpty(format)) return res.sendStatus(422)
       
     
-      
-      
   
     const sql = "SELECT * FROM audiance WHERE payment_status = ? AND a_id = ? OR mobile = ?;"
   
