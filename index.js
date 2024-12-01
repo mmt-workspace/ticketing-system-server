@@ -4,10 +4,8 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const db = require("./database/db")
-const { createServer } = require("http");
-const { Server } = require("socket.io");
 const path = require('path');
-const GetPaidList = require("./app/dashbord/Audiance/Payment/GetPaidList")
+
 
 
 const port = 8800
@@ -31,19 +29,7 @@ app.use(express.json())
 
 app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
 app.use(bodyParser.json({limit: '10mb'}));
-/* app.use((req, res, next) => {
-  req.clientIp = req.headers["x-forwarded-for"] || req.socket.remoteAddress || null;
-  next();
-}); */
-const httpServer = createServer(app);
 
-const io = new Server(httpServer, {  
-
-    cors: {
-    origin: ["https://kasuat20.mmt-ng.com","http://127.0.0.1:8800"],
-    methods:['GET','POST']
-  } }
-  )
 
 
 // All Routes Modules 
@@ -53,12 +39,6 @@ const {authenticator} = require("./auth/jwt")
 
   
  
-io.on("connection",(socket)=>{
-    // update posted producted
-    socket.on("update_client_side_products", (arg) => {
-          socket.broadcast.emit("reupdate",arg)
-      })
-  })
 
   
 // Auth Route  authenticator
@@ -79,7 +59,7 @@ app.get('*', (req, res) => {
 }) 
  
 
-httpServer.listen(port, () => console.log(`ticketing Server is running on port ${port}!`))
+app.listen(port, () => console.log(`ticketing Server is running on port ${port}!`))
 
 
  db.connect((err)=>{

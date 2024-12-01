@@ -16,7 +16,7 @@ Get_Audiance = (req,res)=>{
     
     db.query(sql,[status],(err,result)=>{
 
-           if(err) console.log(err.message)
+           if(err) console.log(err)
 
            res.send(result) 
 

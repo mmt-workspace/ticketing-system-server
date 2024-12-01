@@ -4,7 +4,7 @@ const Add_Audiance = require("../app/dashbord/Audiance/Add_Audiance")
 const {CheckMobileAudiance,CheckMobileBeforePay} = require("../app/dashbord/Audiance/CheckMobileAudiance")
 const GetPaidAudiance = require("../app/dashbord/Audiance/GetPaidAudiance")
 const DownloadTicket = require("../app/dashbord/Audiance/downloadticket/DownloadTicket")
-const {CountVisitor} = require("./countvisitor")
+// const {CountVisitor} = require("./countvisitor")
 const AdminULogin = require("../app/dashbord/login/AdminULogin")
 
 

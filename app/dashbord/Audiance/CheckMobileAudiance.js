@@ -24,7 +24,7 @@ CheckMobileAudiance = (req,res,next) =>{
     db.query(sql,[mobileNumber],(err,result) =>{
 
 
-         if(err) return console.log(err.message)
+         if(err) return console.log(err)
 
 
 
@@ -66,7 +66,7 @@ CheckMobileBeforePay = (req,res,next) =>{
     db.query(sql,[mobileNumber],(err,result) =>{
 
 
-         if(err) return console.log(err.message)
+         if(err) return console.log(err)
 
 
 

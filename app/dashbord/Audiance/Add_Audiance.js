@@ -52,7 +52,7 @@ Add_Audiance = (req,res)=>{
        db.query(sql,list,(err,result)=>{
 
           
-          if(err) console.log(err.message)
+          if(err) console.log(err)
 
              if(paid_for === "ticket" || paid_for === "stall"){
 

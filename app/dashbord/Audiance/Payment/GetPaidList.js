@@ -20,11 +20,11 @@ Update_audiance_statll = (reference_id,user_token,a_id,ownertype,mobileNumber,ti
 
     })
     
-    
-    
-
+     
 
 }
+
+
 
 
 Update_reduce_sit = (ticket_card_token)=>{
