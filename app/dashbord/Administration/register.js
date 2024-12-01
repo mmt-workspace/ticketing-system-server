@@ -66,7 +66,7 @@ RegisterAdministration = async(req,res) =>{
         }
 
       //  const  passwrd = RanDomID(32996582).toString()
-        const  passwrd = 12345
+        const  passwrd = "12345"
         const saltRound = 10
         let hashPasswrd = await bcrypt.hash(passwrd,saltRound)
 
@@ -79,7 +79,7 @@ RegisterAdministration = async(req,res) =>{
 
     db.query(sql,list,(err,result) =>{
 
-          if(err) return console.log(err.message)
+       if(err) return console.log(err.message)
               
        // Create Table for JWT 
         CreateJwt(userToken)
