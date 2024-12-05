@@ -67,3 +67,22 @@ app.listen(port, () => console.log(`ticketing Server is running on port ${port}!
 
     console.log('DataBase Connected')
 }) 
+
+
+// Catch uncaught exceptions
+process.on('uncaughtException', (err) => {
+  if (err.message.includes("Can't add new command when connection is in closed state")) {
+      console.error("Critical error detected: ", err.message);
+      process.exit(1); // Exit to trigger PM2 restart
+  } else {
+      console.error("Unhandled exception: ", err.message);
+  }
+});
+
+// Catch unhandled promise rejections (optional)
+process.on('unhandledRejection', (reason, promise) => {
+  console.error("Unhandled rejection at: ", promise, "reason: ", reason);
+});
+
+// console.log("Error handlers initialized.");
+
