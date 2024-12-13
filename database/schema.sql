@@ -17,7 +17,8 @@ CREATE TABLE administration(
   ID INT,
   stateoforigin VARCHAR(100),
   insertDate DATETIME DEFAULT CURRENT_TIMESTAMP,
-  usertype VARCHAR(100) NOT NULL
+  usertype VARCHAR(100) NOT NULL,
+  check_in_out VARCHAR(100) ,
 );
 
 
@@ -91,3 +92,14 @@ CREATE TABLE log_tbl(
     ip_address VARCHAR(45),
     visit_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
+
+// watch checkin_time
+
+CREATE TABLE wtach_checked_in_out(
+       wtach_checked_in_out_id INT AUTO_INCREMENT PRIMARY KEY,
+       fullname VARCHAR(200) NOT NULL,
+       ticket_id VARCHAR(100) NOT NULL,
+       mobile VARCHAR(100) NOT NULL,
+       check_status VARCHAR(100) NOT NULL,
+       insertDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

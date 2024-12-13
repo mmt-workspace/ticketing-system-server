@@ -77,7 +77,8 @@ process.on('uncaughtException', (err) => {
   } else {
       console.error("Unhandled exception: ", err.message);
   }
-});
+  
+}); 
 
 // Catch unhandled promise rejections (optional)
 process.on('unhandledRejection', (reason, promise) => {

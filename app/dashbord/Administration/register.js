@@ -14,7 +14,7 @@ const SendPassward = require("../../../email/SendPassward")
 RegisterAdministration = async(req,res) =>{
 
    
-    const {firstName,lastName,email,mobileNumber,userType} =  req.body
+    const {firstName,lastName,email,mobileNumber,userType,validator_roles} =  req.body
  
      // Validate 
      if(validator.isEmpty(firstName.trim()) || validator.isEmpty(lastName.trim()) || validator.isEmpty(email.trim()) || validator.isEmpty(userType.trim()) || validator.isEmpty(mobileNumber.trim())){
@@ -72,9 +72,9 @@ RegisterAdministration = async(req,res) =>{
 
        
   
-       const sql = "INSERT INTO administration(fname,lname,email,passwrd,mobile,usertype,acc_level,token) VALUES(?,?,?,?,?,?,?,?);"
+       const sql = "INSERT INTO administration(fname,lname,email,passwrd,mobile,usertype,check_in_out,acc_level,token) VALUES(?,?,?,?,?,?,?,?,?);"
        const userToken = TokensGenerator(10)
-       const list = [firstName,lastName,email,hashPasswrd,mobileNumber,userType,acc_level,userToken]
+       const list = [firstName,lastName,email,hashPasswrd,mobileNumber,userType,validator_roles,acc_level,userToken]
 
 
     db.query(sql,list,(err,result) =>{

@@ -78,7 +78,7 @@ const GetPaidList = (reference_id,transaction,status,user_token,a_id,mobileNumbe
     path: `/transaction/verify/${reference_id}`, // Remove ':' before the transaction ID
     method: 'GET',
     headers: {
-      Authorization: `Bearer sk_live_e46d74ba63e120a9116ad5905c6112a572a68182`, // Use an environment variable for the key
+      Authorization: `Bearer sk_live_4ea0747987af61e2ceb8897b4b6c6960e88d609a`, // Use an environment variable for the key
     },
   };
 

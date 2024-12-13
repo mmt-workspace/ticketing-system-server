@@ -17,19 +17,19 @@ Add_Audiance = (req,res)=>{
 
                res.sendStatus(244)
            }
-       
+           console.log(paid_for)
         let sql 
         let list
 
         const user_token = TokensGenerator(12)
         const a_id = RandomID(39217478)
         const payment_status = 1
-        const stallFee = stallPrice.slice(stallPrice.lastIndexOf("-") + 1)
+        const stallFee = stallPrice !== undefined && stallPrice.slice(stallPrice.lastIndexOf("-") + 1)
        // const sliceticketType =   ticketType.slice(0,user.ticketType.lastIndexOf("-"))
         
-  
+           
           if(paid_for === "free ticket"){
-
+ 
              sql = "INSERT INTO audiance(fullname,mobile,stateoforigin,ticketType,paid_for,ownertype,a_id,user_token,payment_status) VALUES(?,?,?,?,?,?,?,?,?);"
              list = [fullName,mobileNumber,state,ticketType,paid_for,ownertype,a_id,user_token,payment_status]
 

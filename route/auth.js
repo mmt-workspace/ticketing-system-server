@@ -15,6 +15,10 @@ const RemoveAttendee = require("../app/dashbord/Audiance/RemoveAttendee")
 const GetconfigRoute = require("../app/dashbord/Administration/GetconfigRoute")
 const GetSingleAdminUser = require("../app/dashbord/Administration/GetSingleAdminUser")
 const {UpdatePassword,CheckEmailAdmin,CheckPasswordAdmin} = require("../app/dashbord/Administration/UpdatePassward")
+const {TicketValidator,TicketValidatorCheckin} = require("../app/dashbord/Audiance/validator/TicketValidator")
+const {fetch_Watch_Check_in_out} = require("../app/dashbord/Audiance/validator/Watch_Check_in_out")
+
+
 
 
 
@@ -45,9 +49,12 @@ router.delete("/remove_ticket/:token",RemoveTicket)
 router.get("/getconfig_route/:token",GetconfigRoute)
 // Update administration passward
 router.post("/update_passward",CheckEmailAdmin,CheckPasswordAdmin,UpdatePassword)
-
-
-
+// TicketValidator
+router.get("/validate_au/:format",TicketValidator)
+// Ticket Validator Check in
+router.get("/validate_au_out/:format",TicketValidatorCheckin)
+// fetch_Watch_Check_in_out
+router.get("/fetch_Watch_Check_in_out",fetch_Watch_Check_in_out)
  
 
 
